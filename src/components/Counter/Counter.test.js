@@ -27,9 +27,24 @@ describe('Counter Component', () => {
     render(<Counter/>)
 
     const counterTitle = screen.getByText(0);
-
     // verifica se existe a class counter__title no titulo
     expect(counterTitle).toHaveClass('counter__title')
 
-  } )
+  });
+
+  test('não deve iniciar o titulo com as classes [counter__title--increment, counter_title--decrement', () => {
+    render(<Counter/>)
+
+    const counterTitle = screen.getByText(0);
+
+    // verifica se existe a class counter__title no titulo
+    expect(counterTitle).not.toHaveClass('counter__title--increment')
+    expect(counterTitle).not.toHaveClass('counter__title--descrement')
+
+  });
+
+  
+
+
+
 })
