@@ -21,5 +21,15 @@ describe('Counter Component', () => {
     // verifica se no documente existe essa constant
     expect(counterTitle).toBeInTheDocument();
 
-  })
+  });
+
+  test('deve conter a classe counter__title no titulo', () => {
+    render(<Counter/>)
+
+    const counterTitle = screen.getByText(0);
+
+    // verifica se existe a class counter__title no titulo
+    expect(counterTitle).toHaveClass('counter__title')
+
+  } )
 })
