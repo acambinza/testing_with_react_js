@@ -1,5 +1,6 @@
 // para rederisar o meu componente, importamos o render do testing-library
 import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 
 import Counter from ".";
 
@@ -43,7 +44,20 @@ describe('Counter Component', () => {
 
   });
 
-  
+  /** Testes de Eventos */
+  test('deve incrementar +1 ao clicar no botão incrementar', () => {
+    render(<Counter/>)
+
+    const buttonIncrement = screen.getByRole('button', {name: /incrementar/i}) ;
+    
+    userEvent.click(buttonIncrement)
+    expect(screen.getByText("1")).toBeInTheDocument();
+
+  });
+
+
+
+
 
 
 
