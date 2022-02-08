@@ -5,7 +5,7 @@ import Counter from ".";
 
 
 describe('Counter Component', () => {
-  test('deve iniciar o tituo com o valor 0', () => {
+  test('deve iniciar o titulo com o valor 0', () => {
     // apartir desses metodo render, conseguimos pegar as funcoes e propriedades da funcao, ou podemos usar o screen do testing-library
     render(<Counter />)
 
