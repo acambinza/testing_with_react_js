@@ -50,15 +50,21 @@ describe('Counter Component', () => {
 
     const buttonIncrement = screen.getByRole('button', {name: /incrementar/i}) ;
     
+    expect(screen.queryByText("1")).toBeNull();
     userEvent.click(buttonIncrement)
     expect(screen.getByText("1")).toBeInTheDocument();
 
   });
 
+   test('deve descrementar -1 ao clicar no botão incrementar', () => {
+    render(<Counter/>)
 
+    const buttonIncrement = screen.getByRole('button', {name: /decrementar/i}) ;
+    
+    expect(screen.queryByText("-1")).toBeNull();
+    userEvent.click(buttonIncrement)
+    expect(screen.getByText("-1")).toBeInTheDocument();
 
-
-
-
+  });
 
 })
